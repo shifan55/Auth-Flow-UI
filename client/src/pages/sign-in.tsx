@@ -190,7 +190,23 @@ export default function SignIn() {
             background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)"
           }}
         />
+        
+        {/* Right edge blend into white */}
+        <div 
+          className="absolute top-0 right-0 bottom-0 w-32 pointer-events-none"
+          style={{
+            background: "linear-gradient(to right, transparent 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.4) 100%)"
+          }}
+        />
       </div>
+      
+      {/* Center divider blend */}
+      <div 
+        className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-24 -translate-x-1/2 pointer-events-none z-10"
+        style={{
+          background: "linear-gradient(to right, rgba(59, 209, 139, 0.3) 0%, rgba(59, 209, 139, 0.1) 30%, rgba(249, 250, 251, 0.1) 70%, rgba(249, 250, 251, 0.3) 100%)"
+        }}
+      />
 
       {/* Right Panel - Sign In Form */}
       <div className="flex-1 flex items-center justify-center p-6 lg:p-12 bg-gray-50/50">
