@@ -91,32 +91,103 @@ export default function SignIn() {
       <div 
         className="hidden lg:flex lg:w-1/2 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0fb06b 0%, #3bd18b 100%)"
+          background: "linear-gradient(145deg, #0a8f56 0%, #0fb06b 40%, #3bd18b 100%)"
         }}
       >
-        <div className="relative z-10 flex flex-col justify-center px-12 xl:px-16 py-12 w-full">
-          <h1 className="font-display text-4xl xl:text-5xl font-bold text-white leading-tight mb-4">
-            Smart Crop<br />Prediction System
-          </h1>
-          <p className="text-white/90 text-lg xl:text-xl max-w-md leading-relaxed">
-            Empowering Sri Lankan farmers with data-driven agricultural predictions.
-          </p>
-        </div>
-        
-        {/* Farm Illustration */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-          <img 
-            src={farmIllustration} 
-            alt="Farm illustration with barn and crops"
-            className="w-full max-w-lg object-contain"
-          />
-        </div>
-        
-        {/* Decorative gradient overlay */}
+        {/* Background pattern */}
         <div 
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 opacity-10"
           style={{
-            background: "radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)"
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+
+        <div className="relative z-10 flex flex-col justify-between px-10 xl:px-14 py-12 w-full h-full">
+          {/* Top section */}
+          <div>
+            {/* Logo/Brand */}
+            <div className="flex items-center gap-3 mb-12">
+              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <span className="font-display text-xl font-semibold text-white">CropPredict</span>
+            </div>
+
+            {/* Main heading */}
+            <h1 className="font-display text-4xl xl:text-5xl font-bold text-white leading-tight mb-5">
+              Smart Crop<br />Prediction System
+            </h1>
+            <p className="text-white/85 text-lg max-w-sm leading-relaxed mb-10">
+              Empowering Sri Lankan farmers with data-driven agricultural predictions for better yields.
+            </p>
+
+            {/* Feature highlights */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-white/15 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-medium">Real-time Analytics</h3>
+                  <p className="text-white/70 text-sm">Monitor crop health and weather patterns</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-white/15 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-medium">Smart Predictions</h3>
+                  <p className="text-white/70 text-sm">AI-powered harvest timing recommendations</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-white/15 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-medium">Farmer Community</h3>
+                  <p className="text-white/70 text-sm">Connect with 10,000+ local farmers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom section with illustration */}
+          <div className="relative mt-8">
+            <img 
+              src={farmIllustration} 
+              alt="Farm illustration with barn and crops"
+              className="w-full max-w-xs object-contain mx-auto drop-shadow-2xl"
+            />
+          </div>
+        </div>
+        
+        {/* Decorative elements */}
+        <div 
+          className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)"
+          }}
+        />
+        <div 
+          className="absolute bottom-0 left-0 w-64 h-64 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)"
           }}
         />
       </div>
