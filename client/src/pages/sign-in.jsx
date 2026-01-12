@@ -12,11 +12,11 @@ export default function SignIn() {
   const [passwordError, setPasswordError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
   const { toast } = useToast();
 
-  const validateEmail = (value: string): boolean => {
+  const validateEmail = (value) => {
     if (!value.trim()) {
       setEmailError("Email or username is required");
       return false;
@@ -32,7 +32,7 @@ export default function SignIn() {
     return true;
   };
 
-  const validatePassword = (value: string): boolean => {
+  const validatePassword = (value) => {
     if (!value) {
       setPasswordError("Password is required");
       return false;
@@ -45,7 +45,7 @@ export default function SignIn() {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     const isEmailValid = validateEmail(email);
@@ -79,7 +79,7 @@ export default function SignIn() {
     });
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSubmit(e);
     }
